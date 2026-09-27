@@ -1,0 +1,499 @@
+/* :root{
+
+--bg-color:#f5f5f5;
+--bg-container:#FAFAFA;
+
+--primary: #1677ff;
+    --primary-light: #e6f4ff;
+    --primary-hover: #4096ff;
+    --primary-dark: #0958d9;
+    --primary-medium: #91caff;
+    
+    --warning: #faad14;
+    --warning-light: #fffbe6;
+    --warning-border: #ffe58f;
+    --warning-text: #d48806;
+    
+    --success: #52c41a;
+    --success-light: #f6ffed;
+    --success-medium: #b7eb8f;
+    --success-dark: #389e0d;
+
+    --danger-light: #fff2f0;
+    --danger-medium: #ffccc7;
+    --danger-dark: #cf1322;
+    --purple: #722ed1;
+    --purple-light: #f9f0ff;
+    --purple-border: #d3adf7;
+    --cyan: #13c2c2;
+    --cyan-light: #e6fffb;
+    --cyan-border: #87e8de;
+    --gold: #fa8c16;
+    --gold-light: #fff7e6;
+    --magenta: #eb2f96;
+    --magenta-light: #fff0f6;
+    --text-light:#00000073;
+    --text-secondary: rgba(0, 0, 0, .65);
+    --text-tertiary: rgba(0, 0, 0, .45);
+    --text-quaternary: rgba(0, 0, 0, .25);
+    --border: #d9d9d9;
+    --border-secondary: #f0f0f0;
+    --bg-layout: #f5f5f5;
+    --bg-container: #ffffff;
+    --bg-spotlight: #fafafa;
+    --bg-sider: #001529;
+
+} */
+
+
+
+.main{
+    background-color: var(--bg-color);
+    height: 100vh;
+    padding: 0 25px;
+}
+.welcome-sec{
+    /* background-color: #b7eb8f; */
+    padding-top: 25px;
+    text-align: left;
+    margin-bottom: 20px;
+
+}
+.inner-welcome-sec1{
+    /* background-color:#ffe58f; */
+    margin-top: 5px;
+}
+.desc-sec1{
+    font-size: 13.5px;
+    color:#00000073;
+    margin-top: 5px;
+}
+
+/* ==================card section 2================ */
+.attendee-stat-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    text-align: left;
+    
+}
+.stats-card.ant-card {
+  border-radius: 12px;
+}
+/* .inner-card{
+    background-color: #13c2c2;
+
+} */
+.inner-card h2{
+    font-size: 26px;
+    color: var(--text);
+    margin-top: 10px;
+}
+.inner-card p{
+    font-size: 12.5px;
+    color: var(--text-tertiary);
+    margin-top: 12px;
+}
+.card-top{
+    display: flex;
+    justify-content: space-between;
+}
+.card-top span{
+    font-size: 13.5px;
+    color: var(--text-tertiary);
+}
+.card-top .icon-blue{
+    font-size: 16px;
+    color: var(--primary);
+    background-color: var(--primary-light);
+     height: 36px;
+    width: 36px;
+     border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      transform: translateY(-6px);
+}
+.card-top .icon-green{
+    font-size: 16px;
+    color: var(--success);
+    background-color: var(--success-light);
+     height: 36px;
+    width: 36px;
+     border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      transform: translateY(-6px);
+}
+.card-top .icon-purple{
+    font-size: 16px;
+    color: var(--purple);
+    background-color: var(--purple-light);
+     height: 36px;
+    width: 36px;
+     border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      transform: translateY(-6px);
+}
+
+
+/* -----------------------section 3------------------ */
+ .upcoming-event{
+    /* background-color: #faea05; */
+    margin-top: 25px;
+
+ }
+ .event-title{
+    color: #000000E0;
+    font-size: 16px;
+    font-weight: 400;
+ }
+ .view-ticket-btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--primary);
+ }
+ .upcoming-event-table{
+    margin-top: 10px;
+ }
+.upcoming-event-table .ant-table-tbody > tr > td {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: 50px !important;
+}
+
+ /* -------section4----------- */
+ .recommended-section{
+    margin-top: 22px;
+ }
+.h3{
+    font-size:16px;
+    color: var(--text);
+    text-align: left;
+}
+.recommended-title{
+    margin-bottom: 12px;
+}
+
+
+
+/* ----------section5  recomended cards-------- */
+
+.events-grid-4{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+
+/* ========================================================================================= 
+                           MY TICKET PAGE
+ =========================================================================================== */
+ .ticket-page{
+    background-color: var(--bg-color);
+    height: 91vh;
+ }
+ .ticket-header{
+    text-align: left;
+    padding: 25px 25px;
+ }
+ .ticket-title{
+    font-weight: 600;
+    color: black;
+    padding-bottom: 5px;
+ }
+
+ /* ========================================================================================
+                                SECTION2 TABLE NAV ROUTE
+============================================================================================ */
+.ticket-nav{
+    width: 440px;
+     margin-left: 25px;
+
+
+}
+.tabel.nav{
+    margin-left: 20px;
+}
+ ul{
+display: flex;
+list-style-type: none;
+font-size: 14px;
+gap:30px;
+}
+li:hover{
+    color: var(--primary-hover);
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+li.active{
+    padding-bottom: 10px;
+    color:var(--primary-dark) ;
+    border-bottom: 2px solid var(--primary-dark);
+}
+
+/* ------------------table ticket------------- */
+/* .table-sec{
+    background-color: burlywood; 
+    margin-top: 15px;
+}
+.table-sec table{
+    width: 95%;
+   margin: auto;
+   border-collapse: collapse;
+   border-radius: 10px;
+}
+.table-sec table thead tr{
+    background-color:var(--bg-container);
+    color: #000000E0;
+    
+}
+.table-sec table thead tr th{
+    padding: 12px 16px;
+}
+
+
+.table-sec table tr{
+    background-color: rgb(255, 255, 255);
+    transition: 0.3s;
+    height: 48px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13.5px;
+    text-align: left;
+}
+.event-col{
+    color: #000000A6;
+    font-weight: 500;
+}
+
+td{
+        padding-left: 10px;
+
+}
+.table-sec table tr:hover{
+background-color: #FAFAFA;
+} */
+
+.ticket-table .ant-table-tbody > tr > td {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: 50px !important;
+}
+
+ /* .status_active{
+    color:var(--success-dark);
+    background-color: var(--success-light);
+    border: 1px solid var(--success-medium);
+    border-radius: 4px;
+    padding: 3px 9px;
+}
+.status_checked-in{
+    color:var(--primary-dark);
+    background-color: var(--primary-light);
+    border: 1px solid var(--primary-medium);
+    border-radius: 4px;
+    padding: 3px 9px;
+
+}
+ .status_cancelled{
+    color:var(--danger-dark);
+    border: 1px solid var(--danger-medium);
+    background-color: var(--danger-light);
+    border-radius: 4px;
+    padding: 3px 9px;
+
+} */
+.document-btn{
+    border: none;
+    background-color: transparent;
+    padding: 3px 6px;
+  color: #000000E0;
+}
+.document-btn:hover{
+    color: #4096ff;
+    cursor: pointer;
+}
+
+/* ----------view QR button-------------------- */
+.view-QR{
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 200;
+      margin-right: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(202, 202, 202) ;
+  transition: 0.2s;
+
+}
+.view-QR:hover{
+     color:var(--primary-hover);
+     border-color:var(--primary-medium);
+     cursor: pointer;
+}
+
+
+.ticket-table{
+    margin: 20px 25px;
+}
+
+/* -------modal qr */
+
+.ticket-qr-modal {
+    
+    width: 31vw!important;
+    margin-top: -12px!important;
+   
+
+}
+.qr-modal{
+    height: 66vh!important;
+}
+.modal-header-title{
+ font-weight: 600;
+    font-size: 16px!important;
+    margin-bottom: 22px;
+}
+
+.qr-image{
+    margin: auto;
+    width: 11vw!important;
+    height: 24vh!important;
+    padding: 0!important;
+}
+
+
+.qr-content-container{
+text-align: center;
+padding: 17px 0;
+}
+
+.qr-content-container h3{
+    font-size: 15px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.qr-content-container p{
+    font-size: 12.5px;
+    color: var(--text-tertiary);
+    text-align: center;
+    padding-top: 5px;
+
+}
+
+
+.qr-content-container-2{
+    text-align: center;
+}
+.qr-content-container-2 p{
+    margin-bottom: 16px;
+   text-align: center;
+   font-size: 12.5px;
+   color: var(--text-tertiary);
+
+}
+.qr-content-container-2 span{
+    cursor: pointer;
+color: var(--primary);
+margin-top: 20px!important;
+font-size: 13.5px;
+}
+
+.modal-footer{
+    padding-top: 12px;
+}
+.modal-divider {
+  border-top: 1px solid #ddd;
+  width: calc(100% + 48px);
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-top: 25px;
+}
+
+.modal-divider-top{
+      border-top: 1px solid #ddd;
+  width: calc(100% + 48px);
+ margin-left: -24px;
+  margin-right: -24px;
+  margin-bottom: 20px;
+}
+
+.done-btn{
+    width: 100%;
+}
+
+
+
+/* =============================================================================================== */
+/*                                REGISTERED_DOCUMENT PAGE ==>CSS                                  */
+/* =============================================================================================== */
+
+
+
+/* ------------------section1--------- */
+.RD-section-1{
+    background-color: #4096ff;
+    padding-top: 22px;
+}
+.Document-name{
+    color: var(--text);
+    font-size: 13px;
+}
+#nav-ticket{
+    color: var(--text-tertiary);
+    font-size: 13px;
+}
+.RD_Title{
+    font-size: 22px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text);
+    padding-top: 10px;
+}
+
+.RD-Description{
+    font-size: 13.5px;
+    color: var(--text-tertiary);
+    padding-top: 7px;
+}
+
+/* -----------------section2------------ */
+
+.RD-section-2{
+    margin-top: 20px;
+}
+
+.ticket-verification-message{
+    border: 1px solid var(--success-border);
+    border-radius: var(--border-radius-md);
+    background-color: var(--success-light);
+    text-align: left;
+    height: 70px;
+    display: flex;
+    padding-left: 20px;
+    column-gap: 8px;
+    padding-top: 8px;
+    
+}
+
+.check-icon{
+    color: var(--success-text);
+    font-size: 18px;
+}
+
+.verification-status{
+    font-size: 13.5px;
+    color: var(--success-text);
+}
+.verification-info{
+    font-size: 13.5px;
+    color: var(--success-text);
+    margin-top: -5px;
+}
+
+
+/* ---------------section3------------- */

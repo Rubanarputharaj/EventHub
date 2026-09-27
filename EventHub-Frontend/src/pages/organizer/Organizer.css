@@ -1,0 +1,267 @@
+.create-event-container {
+  min-height: 91.7vh;
+  margin: 24px;
+}
+
+.event-form {
+  margin-top: 20px;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+}
+
+.event-form h2 {
+  margin-bottom: 25px;
+}
+
+.event-form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+
+/* ====================================================================================================
+                                  ATTENDEE CHECK UI (QR SCAN) PAGE
+======================================================================================================= */
+.parent{
+  margin:21px 24px;
+  min-height: 91.7vh;
+  /* background-color: var(--primary-light); */
+}
+.attendee-check-section1 p{
+  text-align: left;
+  color:rgba(0, 0, 0, .45);
+  font-size: 12.5PX;
+  margin-top: 2PX;
+}
+
+.sec1-title{
+
+  display: flex;
+  justify-content: space-between;
+  /* background-color: bisque; */
+    padding-top: 30px;
+
+}
+
+.sec1-title h3{
+color: var(--text);
+font-size: 22px;
+font-weight: 600;
+}
+
+.modal-container{
+width: 45vw!important;
+height: 100vh!important;
+}
+
+.scanner-title{
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+      border-bottom: 1px solid #d9d9d9;
+
+}
+.scanner-box{
+  height: 70vh;
+  width: 41vw;
+  background-color: black;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-radius:10px ;
+
+}
+
+.QR-btn-section{
+  display: flex;
+  justify-content: end;
+  margin-top: 18px;
+}
+.qr-cancel-btn{
+  margin-right: 10px;
+}
+.scanner-text{
+  padding: 10px 0px;
+    border-bottom: 1px solid #d9d9d9;
+
+}
+
+.camera-icon{
+  color:grey;
+  font-size: 70px;
+}
+
+.scanner-line {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  height: 2px;
+  background: rgb(29, 231, 29);
+
+  animation: scan 2s infinite;
+}
+
+@keyframes scan {
+  0% {
+    top: 25px;
+  }
+
+  50% {
+    top: 430px;
+  }
+
+  100% {
+    top: 25px;
+  }
+}
+
+/* ---section2-- */
+
+
+.attendee-checkin-table{
+  margin-top: 18px;
+  /* background-color: darkgoldenrod; */
+}
+.attendee-search-input{
+  width: 30%;
+  margin-right: 70%;
+  height: 36px!important;
+  margin-bottom: 15px;
+}
+.switch-btn.ant-switch-checked{
+  background-color: #52c41a!important;
+}
+/* ----table attende */
+
+.attendee-table .ant-table-tbody > tr > td {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: 50px !important;
+}
+
+.name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===============================================================================================
+                                 organizer dashboard css
+======================================================================================================*/
+.attendee-stat-card-4{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 18px;
+  margin-top: 20px;
+}
+.inner-card h2,p{
+  text-align: left;
+}
+
+
+
+/* section2 */
+
+.progress-bar-container h3{
+text-align: left;
+font-size: 14px;
+margin-top: 14px;
+}
+
+
+/* -----------------------section3    revenue------------------ */
+.revenue-container{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-top: 17px;
+  /* background-color: blue; */
+}
+.revenue-header{
+  display: flex;
+  justify-content: space-between;
+
+}
+.chart-bar-container{
+  height: 225px;
+
+}
+.my-event{
+  margin-top: 24px;
+}
+.my-event h3{
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+}
+.my-event-table{
+  margin-top: 15px;
+}
+
+
+
+
+
+
+/* ===============================================================================================
+                                  CREATE EVENT PAGE
+==================================================================================================*/
+.create-section1{
+/* background-color: blanchedalmond; */
+padding-top: 28px;
+}
+.create-section1 h3{
+  text-align: left;
+  font-size: 22px;
+  color: var(--text);
+  font-weight: 500;
+}
+.create-section1 p{
+  font-size: 13.5px;
+  color: rgba(0, 0, 0, .45);
+  text-align: left;
+  padding-top: 5px;
+}
+
+
+/* ------------------section 2----------------- */
+.form-label{
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 600;
+}
+.red-star{
+  color: red;
+  margin-right: 5px;
+}
+
+.row2-parent{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.textarea{
+  height: 15vh!important;
+}
+
+.input{
+  outline: none!important;
+  border-color: #d9d9d9!important;
+
+}
+
+.input:focus{
+border-color: blue!important;
+}

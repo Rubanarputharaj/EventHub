@@ -1,0 +1,80 @@
+/* -----------------Admin Title (section1)---------------------- */
+
+.admin-title-container{
+    padding-top: 5px;
+}
+
+.admin-title-container .admin-title{
+    font-size: 22px!important;
+    color:var(--text);
+    font-weight: 600;
+    text-align: left;
+}
+
+.admin-title-container p{
+font-size: 13.5px;
+color: var(--text-tertiary);
+padding-top: 8px;
+}
+
+/*----------------------------------Admin Stat (section2)--------------------------  */
+
+
+#stat-footer1{
+    color: var(--success-text);
+}
+#stat-footer4{
+    color: var(--danger-text);
+}
+
+@media (max-width: 576px) {
+.attendee-stat-card-4{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+.attendee-stat-card-4{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+}}
+
+/* section3 */
+
+/* .admin-roles-table-container{
+    background-color: #91caff;
+
+} */
+.admin-title{
+    font-size: 16px;
+    color: var(--text);
+    font-weight: 600;
+    text-align: left;
+    margin-top: 25px;
+}
+
+.admin-roles-table{
+margin-top: 13px;
+}
+
+.select-roles{
+    width: 110px!important;
+    height: 25px!important;
+}
+
+
+/* --------table------- */
+ .ant-table-tbody > tr > td {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: 50px !important;
+}
+
+.deleteIcon{
+    color:var(--text-tertiary)
+}
+.action-parent-gap{
+    display: flex;
+    gap: 7px;
+}
