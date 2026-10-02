@@ -1,10 +1,9 @@
 import React from 'react'
 import { Card, } from 'antd';
-import {TagsOutlined,CalendarOutlined ,
-  CheckCircleOutlined, DeleteOutlined
+import {UserOutlined,CalendarOutlined ,DollarOutlined,
+ ExclamationCircleOutlined , DeleteOutlined
 } from '@ant-design/icons';
 import {Table,Select,Avatar} from 'antd';
-
 import './Admin.css'
 import { StatusTag } from '../../Constants/StatusTag';
 function AdminDashboard() {
@@ -14,7 +13,6 @@ function AdminDashboard() {
   "#722ed1",
   "#13c2c2",
   "#52c41a",
-  
   "#fa8c16",
   "#eb2f96",
   
@@ -68,25 +66,29 @@ function AdminDashboard() {
       key:"actions",
       render:()=>(
         <div>
-          <Select
-          className='select-roles'
-          placeholder={"All roles"}
-          options={[
-            {
-              value:"ottendee",
-              label:"Attendee"
-            },
-            {
-              value:"organizer",
-              label:"Organizer"
-            },
-            {
-              value:"admin",
-              label:"Admin"
-            }
-          ]}
-          />
-          <StatusTag className="action-suspend" status={"Suspend"}  />
+                <Select
+                className='select-roles'
+                placeholder={"All roles"}
+                options={[
+                  {
+                    value:"Attendee",
+                    label:"Attendee"
+                  },
+                  {
+                    value:"organizer",
+                    label:"Organizer"
+                  },
+                  {
+                    value:"admin",
+                    label:"Admin"
+                  }
+                ]}
+                />
+
+            <span className='suspend-btn'>
+                  <StatusTag className="action-suspend" status={"Suspend"}  />
+            </span>  
+            
         </div>
       )
     }
@@ -157,8 +159,8 @@ const columns2=[
     key:"actions",
     render:()=>(
       <div className='action-parent-gap'>
-        <StatusTag status={"Approve"} />
-         <StatusTag status={"Flag"}  />
+       <span className='Aprrove-btn'><StatusTag status={"Approve"} /></span>
+        <span className='Flag-btn'><StatusTag status={"Flag"}  /></span> 
         <DeleteOutlined  className='deleteIcon' />
       </div>
     )
@@ -197,81 +199,88 @@ const data2=[
   return (
     <div className='parent'>
 
+  {/*-------------- Section-1 admin title */}
+
       <section className='admin-title-container'>
         <h3 className='admin-title'>Admin Dashboard</h3>
         <p>Platform-wide metrics and moderation</p>
-
       </section>
 
-
+  {/*-------------- Section-2 Admin stat cards */}
       
-<section className='attendee-stat-card-4'>
-  <Card className="stats-card">
-   <div className='inner-card'>
-    
-     <div className="card-top">
-      <span>Total Users</span>
-      <span className='stat-icon-blue'><TagsOutlined className='icon-blue'/>
-       </span>    </div>
+      <section className='attendee-stat-card-4'>
 
-    <h2>12,480</h2>
-    <p id='stat-footer1'>+340 this week</p>
-   </div>
-  </Card>
+        <Card className="stats-card">
+        <div className='inner-card'>
+           <div className="card-top">
+              <span>Total Users</span>
+              <span className='stat-icon-blue'><UserOutlined className='icon-blue'/>
+              </span>   
+           </div>
+          <h2>12,480</h2>
+          <p className='stat-footer1'>+340 this week</p>
+        </div>
+        </Card>
 
 
-  <Card className="stats-card">
-    <div className='inner-card'>
-    <div className="card-top">
-      <span >Total Events</span>
-      <span className='stat-icon-blue'><CalendarOutlined className='icon-green' /></span>
-    </div>
-     <h2>964</h2>
-     <p>18 pending review</p>
-    </div>
-  </Card>
+        <Card className="stats-card">
+          <div className='inner-card'>
+          <div className="card-top">
+            <span >Total Events</span>
+            <span className='stat-icon-blue'><CalendarOutlined className='icon-gold' /></span>
+          </div>
+          <h2>964</h2>
+          <p>18 pending review</p>
+          </div>
+        </Card>
 
-  <Card className="stats-card">
-    <div className='inner-card'>
-    <div className="card-top">
-      <span>Platform Revenue</span>
- <span className='stat-icon-blue'><CheckCircleOutlined className='icon-purple'/></span>
-    </div>
+        <Card className="stats-card">
+          <div className='inner-card'>
+          <div className="card-top">
+            <span>Platform Revenue</span>
+             <span className='stat-icon-blue'>
+               <DollarOutlined className='icon-green'/>
+              </span>
+          </div>
+          <h2>₹2.1Cr</h2>
+        <p>Across all organizer</p>
+          </div>
+        </Card>
 
-    <h2>₹2.1Cr</h2>
-   <p>Across all organizer</p>
-    </div>
-  </Card>
+        <Card className="stats-card">
+          <div className='inner-card'>
+          <div className="card-top">
+            <span>Pending Moderation</span>
+             <span className='stat-icon-blue'>
+               <ExclamationCircleOutlined  className='icon-danger'/>
+              </span>
+          </div>
+          <h2>4</h2>
+          <p id='stat-footer4'>Needs attention</p>
+          </div>
+        </Card>
+      </section>
 
-  <Card className="stats-card">
-    <div className='inner-card'>
-    <div className="card-top">
-      <span>Pending Moderation</span>
- <span className='stat-icon-blue'><CheckCircleOutlined className='icon-purple'/></span>
-    </div>
+  {/*------ Section-3 user Role Management Tbale */}
 
-    <h2>4</h2>
+        <section className='admin-roles-table-container'>
+            <h4 className='admin-title'>User Role Management</h4>
+            <div className='admin-roles-table'>
+              <Table columns={columns} dataSource={data} pagination={false} className='user-role-table'/>
+            </div>
 
-    <p id='stat-footer4'>Needs attention</p>
-    </div>
-  </Card>
-</section>
+        </section>
 
-<section className='admin-roles-table-container'>
- <h4 className='admin-title'>User Role Management</h4>
-<div className='admin-roles-table'>
-  <Table columns={columns} dataSource={data} pagination={false}/>
-</div>
+  {/*-------- Section-4 Event Moderartion Table */}
 
-</section>
+        <section className='event-moderation-container'>
+             <h3 className="admin-title">Event Moderation</h3>
+                <div className='admin-table-container'><Table columns={columns2}
+                  dataSource={data2} 
+                  pagination={false} className='event-moderator-table'/>
+                </div>
+        </section>
 
-<section className='event-moderation-container'>
-  <h3 className="admin-title">Event Moderation</h3>
-  <Table columns={columns2}
-   dataSource={data2} 
-   pagination={false}/>
-
-</section>
     </div>
   )
 }

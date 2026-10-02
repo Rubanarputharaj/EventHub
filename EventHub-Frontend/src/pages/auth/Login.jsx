@@ -28,7 +28,7 @@ function Login() {
 
  const handleLogin = (e) => {
   e.preventDefault();
-
+  localStorage.setItem('isLogin', 'true');
   // Admin
   const storedAdmin = JSON.parse(
     localStorage.getItem("admin")

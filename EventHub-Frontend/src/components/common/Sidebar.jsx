@@ -10,7 +10,6 @@ function Sidebar({ sidebarOpen,setSidebarOpen  }) {
   const user = JSON.parse(localStorage.getItem("user"));
 
   console.log("Sidebar user:", user);
-  // const [activeSidebar,setActiveSidebar]=useState("Dasboard");
 
   return (
     <div className={`sidebar ${sidebarOpen ? "open" : ""}`}>
@@ -23,24 +22,29 @@ function Sidebar({ sidebarOpen,setSidebarOpen  }) {
       {user.role === "attendee" && (
         <nav className="sidebar-nav">
 
-          <NavLink className={({isActive})=>isActive?"sidebar-link-active":"sidebar-link"}  end to="/attendee">
+          <NavLink className={({isActive})=>isActive?"sidebar-link-active":"sidebar-link"} 
+          onClick={() => setSidebarOpen(false)} end to="/attendee">
            <HomeOutlined className="sidebar-icon" />
             Dashboard
           </NavLink>
 
-          <NavLink className={({isActive})=>isActive?"sidebar-link-active":"sidebar-link"}  to="/attendee/browserEvent">
+          <NavLink className={({isActive})=>isActive?"sidebar-link-active":"sidebar-link"}
+          onClick={() => setSidebarOpen(false)}  to="/attendee/browserEvent">
 
           <SearchOutlined className="sidebar-icon"/>
             Browser Events
           </NavLink>
 
-          <NavLink className={({isActive})=>isActive?"sidebar-link-active":"sidebar-link"}  to="/attendee/myTicket">
-<ReadOutlined className="sidebar-icon"/>
+          <NavLink className={({isActive})=>isActive?"sidebar-link-active":"sidebar-link"} 
+          onClick={() => setSidebarOpen(false)}
+           to="/attendee/myTicket">
+          <ReadOutlined className="sidebar-icon"/>
             My Tickets
           </NavLink>
 
           <NavLink
             className={({isActive})=>isActive?"sidebar-link-active":"sidebar-link"}
+            onClick={() => setSidebarOpen(false)}
             to="/attendee/registeredDocument"
           >
             <FileOutlined className="sidebar-icon" />
@@ -77,12 +81,12 @@ function Sidebar({ sidebarOpen,setSidebarOpen  }) {
         <nav className="sidebar-nav">
 
           <NavLink  className={({isActive})=>isActive?"sidebar-link-active":"sidebar-link"}    onClick={() => setSidebarOpen(false)}
- end to="/admin">
+        end to="/admin">
            <SafetyCertificateOutlined className="sidebar-icon" />Admin Dashboard
           </NavLink>
 
           <NavLink  className={({isActive})=>isActive?"sidebar-link-active":"sidebar-link"}    onClick={() => setSidebarOpen(false)}
- to="/admin/browserEvent">
+        to="/admin/browserEvent">
            <SearchOutlined className="sidebar-icon" />Browser Events
           </NavLink>
 

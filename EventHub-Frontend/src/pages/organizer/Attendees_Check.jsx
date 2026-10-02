@@ -48,14 +48,6 @@ function Attendees_Check() {
       </div>
     );
   },
-  //     render: (name) => (
-  //   <div className="name-cell">
-  //     <Avatar>
-  //       {name.charAt(0).toUpperCase()}
-  //     </Avatar>
-  //     <span>{name}</span>
-  //   </div>
-  // ),
     },
    
     {
@@ -98,28 +90,24 @@ const data=[
     email:"priya@example.com",
     ticketCode:"TCK-8821-XA",
     status:"Checked-In",
-    // checkIn:true
   },
   {
     attendee:"Rahul Verma",
     email:"rahul@example.com",
     ticketCode:"TCK-7712-BB",
     status:"Not Checked-In",
-     checkIn:true
       },
   {
     attendee:"Ananya Iyer",
     email:"ananya@example.com",
     ticketCode:"TCK-6620-QC",
     status:"Checked-In",   
-    //  checkIn:false
 },
   {
     attendee:"Vikram Nair",
     email:"vikram@example.com",
     ticketCode:"TCK-5591-DD",
     status:"Not Checked-In",   
-    //  checkIn:true
 },
   {
     attendee:"Sneha Kapoor",
@@ -133,7 +121,6 @@ const data=[
     email:"arjun@example.com",
     ticketCode:"TCK-3372-FF",
     status:"Not Checked-In",
-    // checkIn:true
 },
 ]
 
@@ -150,7 +137,9 @@ const data=[
   <section className='attendee-checkin-table'>
     <Input   prefix={<SearchOutlined style={{ marginRight: 8 }} />}
   className='attendee-search-input'  placeholder="Search by name or email"></Input>
+  <div className='attendee-table-container'>
     <Table className='attendee-table' columns={columns} dataSource={data} pagination={false} />
+  </div>
   </section>
 
 
@@ -186,7 +175,7 @@ const data=[
           </div>
 
           <p className="scanner-text">
-Point the attendee's ticket QR code at the camera to check them in automatically          </p>
+           Point the attendee's ticket QR code at the camera to check them in automatically</p>
 
          <div className='QR-btn-section'>  <Button className='qr-cancel-btn'>Cancel</Button>
           <Button

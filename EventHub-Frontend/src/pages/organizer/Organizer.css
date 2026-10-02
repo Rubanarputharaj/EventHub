@@ -1,3 +1,366 @@
+
+/* ====================================================================================================
+                                  ATTENDEE CHECK UI (QR SCAN) PAGE
+======================================================================================================= */
+
+.parent{
+  margin:21px 24px;
+  min-height: 91.7vh;
+}
+
+@media (max-width:567px){
+  .parent{
+  margin:0px 24px!important;
+}
+.sec1-title{
+padding-top: 0px!important;
+}
+
+}
+.attendee-check-section1 p{
+  text-align: left;
+  color:rgba(0, 0, 0, .45);
+  font-size: 12.5PX;
+  margin-top: 2PX;
+}
+
+.sec1-title{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+
+}
+
+.sec1-title h3{
+    color: var(--text);
+    font-size: 22px;
+    font-weight: 600;
+    }
+
+.modal-container{
+   width: 45%!important;
+}
+
+.scanner-title{
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d9d9d9;
+
+}
+.scanner-box{
+  height: 70vh;
+  width: 41vw;
+  background-color: black;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-radius:10px ;
+
+}
+
+.QR-btn-section{
+  display: flex;
+  justify-content: end;
+  margin-top: 18px;
+}
+
+.qr-cancel-btn{
+  margin-right: 10px;
+}
+
+.scanner-text{
+  padding: 10px 0px;
+    border-bottom: 1px solid #d9d9d9;
+
+}
+
+.camera-icon{
+  color:grey;
+  font-size: 70px;
+}
+
+.scanner-line {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  height: 2px;
+  background: rgb(29, 231, 29);
+  animation: scan 2s infinite;
+}
+
+@keyframes scan {
+  0% {
+    top: 25px;
+  }
+
+  50% {
+    top: 430px;
+  }
+
+  100% {
+    top: 25px;
+  }
+}
+
+.scanner-box {
+  width: 100%;
+  max-width: none;
+  height: 65vh;
+  max-height: 550px;
+  margin: 20px auto 0;
+}
+
+
+/* ================= TABLET ================= */
+@media (max-width: 991px) {
+  .modal-container {
+    width: 65% !important;
+  }
+
+  .scanner-box {
+    width: 100%;
+    height: 55vh;
+    max-height: 500px;
+  }
+
+  .scanner-line {
+    left: 20px;
+    right: 20px;
+  }
+}
+
+
+/* ================= MOBILE ================= */
+@media (max-width: 567px) {
+  .modal-container {
+    width: 90% !important;
+    max-width: 90% !important;
+    margin: 0 auto;
+  }
+
+  .scanner-content {
+    width: 100%;
+  }
+
+  .scanner-box {
+    width: 100%;
+    height: 45vh;
+    max-height: 400px;
+    margin-top: 15px;
+  }
+
+  .scanner-title {
+    font-size: 15px;
+  }
+
+  .scanner-text {
+    font-size: 13px;
+  }
+
+  .QR-btn-section {
+    gap: 8px;
+  }
+
+  .QR-btn-section button {
+    font-size: 12px;
+  }
+}
+
+
+
+/* ---section2-- */
+
+
+.attendee-checkin-table{
+  margin-top: 18px;
+}
+
+.attendee-search-input{
+  width: 30%;
+  margin-right: 70%;
+  height: 36px!important;
+  margin-bottom: 15px;
+}
+
+.switch-btn.ant-switch-checked{
+  background-color: #52c41a!important;
+}
+
+/* ----table attende */
+
+.attendee-table .ant-table-tbody > tr > td {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: 50px !important;
+}
+
+.name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.attendee-table-container{
+ width: 100%;
+ overflow-y: hidden;
+ overflow-x: hidden;
+}
+
+@media (max-width:991px){
+ 
+.attendee-search-input{
+  width: 40%;
+}
+
+}
+
+@media (max-width:567px){
+
+.attendee-table-container{
+ width: 100%;
+ overflow-y: hidden;
+ overflow-x: auto;
+}
+
+.attendee-table{
+  min-width: 750px;
+}
+
+.attendee-search-input{
+  width: 50%;
+}
+
+.sec1-title h3{
+  font-size: 19px;
+}
+}
+
+/* ===============================================================================================
+                                 organizer dashboard css
+======================================================================================================*/
+.attendee-stat-card-4{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.inner-card h2,p{
+  text-align: left;
+}
+
+
+/* -----------------------section2 */
+
+.progress-bar-container h3{
+    text-align: left;
+    font-size: 14px;
+    margin-top: 14px;
+  }
+.stat-footer1{
+    color: var(--success-text)!important;
+}
+
+/* -----------------------section3    revenue------------------ */
+
+.chart-bar-container{
+  height: 225px;
+
+}
+.revenue-header h3{
+  text-align: left;
+  font-size: 14px;
+}
+
+.revenue-container{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-top: 17px;
+}
+
+.revenue-container > .ant-card{
+  min-width: 0;
+}
+
+.chart-bar-container{
+  min-height: 225px;
+}
+
+/* TABLET */
+@media (max-width: 991px){
+  .revenue-container{
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 667px){
+  .revenue-container{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* ---------------------SECTION-4 ( My-event Table in organizer dashboard ) */
+
+.my-event{
+  margin-top: 24px;
+}
+
+.my-event h3{
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.my-event-table{
+  margin-top: 15px;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+@media (max-width:567px){
+
+  .my-event-table{
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .organizer-dashboard-table{
+    min-width: 750px;
+  }
+
+}
+
+
+
+
+
+
+/* ===============================================================================================
+                                  CREATE EVENT PAGE
+==================================================================================================*/
+
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;   
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;    
+}
+
+.form-buttons-right {
+  display: flex;
+  gap: 10px;
+}
 .create-event-container {
   min-height: 91.7vh;
   margin: 24px;
@@ -28,206 +391,17 @@
   margin-top: 30px;
 }
 
-
-/* ====================================================================================================
-                                  ATTENDEE CHECK UI (QR SCAN) PAGE
-======================================================================================================= */
-.parent{
-  margin:21px 24px;
-  min-height: 91.7vh;
-  /* background-color: var(--primary-light); */
-}
-.attendee-check-section1 p{
-  text-align: left;
-  color:rgba(0, 0, 0, .45);
-  font-size: 12.5PX;
-  margin-top: 2PX;
-}
-
-.sec1-title{
-
-  display: flex;
-  justify-content: space-between;
-  /* background-color: bisque; */
-    padding-top: 30px;
-
-}
-
-.sec1-title h3{
-color: var(--text);
-font-size: 22px;
-font-weight: 600;
-}
-
-.modal-container{
-width: 45vw!important;
-height: 100vh!important;
-}
-
-.scanner-title{
-  font-size: 16px;
-  color: var(--text);
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-      border-bottom: 1px solid #d9d9d9;
-
-}
-.scanner-box{
-  height: 70vh;
-  width: 41vw;
-  background-color: black;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  border-radius:10px ;
-
-}
-
-.QR-btn-section{
-  display: flex;
-  justify-content: end;
-  margin-top: 18px;
-}
-.qr-cancel-btn{
-  margin-right: 10px;
-}
-.scanner-text{
-  padding: 10px 0px;
-    border-bottom: 1px solid #d9d9d9;
-
-}
-
-.camera-icon{
-  color:grey;
-  font-size: 70px;
-}
-
-.scanner-line {
-  position: absolute;
-  left: 25px;
-  right: 25px;
-  height: 2px;
-  background: rgb(29, 231, 29);
-
-  animation: scan 2s infinite;
-}
-
-@keyframes scan {
-  0% {
-    top: 25px;
-  }
-
-  50% {
-    top: 430px;
-  }
-
-  100% {
-    top: 25px;
-  }
-}
-
-/* ---section2-- */
-
-
-.attendee-checkin-table{
-  margin-top: 18px;
-  /* background-color: darkgoldenrod; */
-}
-.attendee-search-input{
-  width: 30%;
-  margin-right: 70%;
-  height: 36px!important;
-  margin-bottom: 15px;
-}
-.switch-btn.ant-switch-checked{
-  background-color: #52c41a!important;
-}
-/* ----table attende */
-
-.attendee-table .ant-table-tbody > tr > td {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  height: 50px !important;
-}
-
-.name-cell {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* ===============================================================================================
-                                 organizer dashboard css
-======================================================================================================*/
-.attendee-stat-card-4{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 18px;
-  margin-top: 20px;
-}
-.inner-card h2,p{
-  text-align: left;
-}
-
-
-
-/* section2 */
-
-.progress-bar-container h3{
-text-align: left;
-font-size: 14px;
-margin-top: 14px;
-}
-
-
-/* -----------------------section3    revenue------------------ */
-.revenue-container{
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 30px;
-  margin-top: 17px;
-  /* background-color: blue; */
-}
-.revenue-header{
-  display: flex;
-  justify-content: space-between;
-
-}
-.chart-bar-container{
-  height: 225px;
-
-}
-.my-event{
-  margin-top: 24px;
-}
-.my-event h3{
-  text-align: left;
-  font-size: 16px;
-  font-weight: 600;
-}
-.my-event-table{
-  margin-top: 15px;
-}
-
-
-
-
-
-
-/* ===============================================================================================
-                                  CREATE EVENT PAGE
-==================================================================================================*/
 .create-section1{
-/* background-color: blanchedalmond; */
-padding-top: 28px;
+   padding-top: 28px;
 }
+
 .create-section1 h3{
   text-align: left;
   font-size: 22px;
   color: var(--text);
   font-weight: 500;
 }
+
 .create-section1 p{
   font-size: 13.5px;
   color: rgba(0, 0, 0, .45);
@@ -235,13 +409,42 @@ padding-top: 28px;
   padding-top: 5px;
 }
 
+.event-form .ant-steps-item-content {
+  text-align: left;
+}
 
+.event-form .ant-steps-item-description {
+  text-align: left;
+  font-size: 12px;
+}
+
+/* active step circle: white background + blue border (mockup maadhiri) */
+.event-form .ant-steps-item-process .ant-steps-item-icon {
+  background: #fff !important;
+  border-color: var(--primary) !important;
+}
+
+.event-form .ant-steps-item-process .ant-steps-item-icon .ant-steps-icon {
+  color: var(--primary) !important;
+}
+
+/* responsive */
+
+@media (max-width:567px){
+  .create-event-container{
+    margin-top: 0px!important;
+  }
+  .create-section1{
+    padding-top: 0px!important;
+  }
+}
 /* ------------------section 2----------------- */
 .form-label{
   font-size: 14px;
   color: var(--text);
   font-weight: 600;
 }
+
 .red-star{
   color: red;
   margin-right: 5px;
@@ -252,6 +455,7 @@ padding-top: 28px;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
+
 .textarea{
   height: 15vh!important;
 }
@@ -264,4 +468,62 @@ padding-top: 28px;
 
 .input:focus{
 border-color: blue!important;
+}
+
+.form-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.capacity-divider{
+border-top: 5px solid var(--border-secondary);
+  border-radius: 5px !important;
+  margin:3px 0;
+}
+
+.capacity-desc{
+  font-size: 12.5px;
+  color: var(--text-tertiary);
+}
+.price-desc{
+  font-size: 13.5px;
+  color: var(--text-secondary);
+}
+
+.capacity-cb-container{
+  display: flex;
+  gap: 10px;
+}
+
+.capacity-cb-container .checkbox-capaticty{
+margin-top: 22px!important;
+}
+
+
+/* ----Section4 */
+
+.custom-file-upload {
+  width: 100% !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 20px 0;
+}
+
+.upload-icon{
+  font-size: 24px!important;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.upload-text{
+  color: var(--text);
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.upload-hint{
+  color: var(--text-tertiary);
+  font-size: 12.5px;
 }

@@ -113,10 +113,33 @@ Suspend: {
  },
 
  Approve: {
-   bg:"var(--succes-light)",
+     bg:"var(--succes-light)",
       text:"var(--success-text)",
       border:"var(--success-border)",
       label:"Approve",
+ },
+
+
+//  event booking 
+Technology: {
+      bg:"var(--primary-light)",
+      text:"var(--primary-text)",
+      border:"var(--primary-border)",
+      label:"Technology",
+},
+
+"Public Listing": {
+      bg:"var(--succes-light)",
+      text:"var(--success-text)",
+      border:"var(--success-border)",
+      label:"Public listing",
+},
+
+ "On Sale": {
+      bg:"var(--succes-light)",
+      text:"var(--success-text)",
+      border:"var(--success-border)",
+      label:"On sale",
  }
 
 

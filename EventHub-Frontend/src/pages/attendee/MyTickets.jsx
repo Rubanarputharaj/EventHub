@@ -127,55 +127,9 @@ const data=[{
 
 
     {/* -----------------------------TICKET TABLE----------------------------- */}
-    {/* <section className='table-sec'>
-      <table>
-    <thead>
-      <tr>
-        <th>Event</th>
-        <th>Date</th>
-        <th>Ticket Code</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr>
+ 
+      <section className="ticket-table-wrapper">
 
-    </thead>
-    <tbody>
-      <tr>
-        <td className='event-col'>Tech Summit 2026</td>
-        <td>Oct 18, 2026</td>
-        <td>TCK-8821-XA</td>
-        <td><button className='status_active'>Active</button></td>
-        <td><button className='view-QR'>View QR</button> <button className='document-btn'>Document</button></td>
-      </tr>
-       <tr>
-        <td className='event-col'>Indie Music Fest</td>
-        <td>Nov 2, 2026</td>
-        <td>TCK-4432-QW</td>
-        <td> <button className='status_active'>Active </button></td>
-        <td><button className='view-QR'>View QR</button> <button className='document-btn'>Document</button></td>
-      </tr>
-       <tr>
-        <td className='event-col'>Startup Founders Meetup</td>
-        <td>Sep 25, 2026</td>
-        <td>TCK-1190-ZP</td>
-        <td><button className='status_checked-in'>Checked-In</button></td>
-        <td><button className='view-QR'>View QR</button> <button className='document-btn'>Document</button></td>
-      </tr>
-       <tr>
-        <td className='event-col'>Summer Jazz Night</td>
-        <td>Aug 14, 2026</td>
-        <td>TCK-0032-LM</td>
-        <td><button className='status_cancelled'>Cancelled</button></td>
-        <td><button className='view-QR'>View QR</button> <button className='document-btn'>Document</button></td>
-      </tr>
-
-    </tbody>
-
-
-      </table>
-    </section> */}
-
-    <section>
       <Table className="ticket-table" columns={columns} pagination={false} dataSource={data}/>
     </section>
 
@@ -187,7 +141,6 @@ className='ticket-qr-modal'
   open={showModal}
   onCancel={() => setShowModal(false)}
   footer={null}
-  width="50vw"
 >
   <div className="qr-modal">
 

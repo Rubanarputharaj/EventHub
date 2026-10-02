@@ -6,7 +6,7 @@ function PublicHeader() {
 
     const navigate=useNavigate();
 
-    const handleSignUp=()=>{
+ const handleSignUp=()=>{
   navigate('/signup')
 }
  const handleLogin=()=>{
@@ -22,16 +22,14 @@ function PublicHeader() {
                 {/* Logo */}
                 <div className="logo-container">
                     <h3 id="logo">EH</h3>
-                    <h2 className="logo-title">EventHub</h2>
+                    <h2 className="logo-title-1"  style={{ color: "var(--text)" }} >EventHub</h2>
                 </div>
 
                 {/* Navbar */}
                 <nav className="public-navbar">
                
                         <NavLink to='/'  className={({isActive})=>isActive? "navActive" : ""} end >Home</NavLink>
-                        <NavLink to='/events'  className={({isActive})=> isActive ? "navActive" : ""} >Browser Events</NavLink>
-                   
-                    
+                        <NavLink to='/events'  className={({isActive})=> isActive ? "navActive" : ""} >Browser Events</NavLink>     
                 </nav>
 
             </div>

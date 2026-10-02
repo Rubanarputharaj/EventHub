@@ -1,8 +1,10 @@
 import React from "react";
-import {CalendarTwoTone,TeamOutlined ,
+import {CalendarTwoTone,TeamOutlined ,CalendarOutlined ,
   UserOutlined,EnvironmentOutlined,RightOutlined, LeftOutlined  ,CoffeeOutlined 
 ,TikTokOutlined ,PictureOutlined ,SearchOutlined  } from "@ant-design/icons";
 import {Card} from 'antd'
+import { getCategoryColor } from '../../Constants/CategoryColor';
+import CategoryTag from "../../Constants/CategoryTag";
 import "./Public.css";
 import { useNavigate } from "react-router-dom";
 
@@ -158,7 +160,7 @@ function Home() {
 
           <div className="search-box">
 
-            <div className="search-field search-event">
+            <div className="search-field ">
               <span className="search-icon"><SearchOutlined /></span>
               <input
                 type="text"
@@ -166,7 +168,7 @@ function Home() {
               />
             </div>
 
-            <div className="search-field search-city">
+            <div className="search-field ">
              <span className="location-icon"><EnvironmentOutlined /></span>
               <input
                 type="text"
@@ -183,14 +185,8 @@ function Home() {
       </section>
 
 
-
-
-
-
-      
-
       {/* Popular Categories */}
-      {/* <section className="popular-section">
+      <section className="popular-section">
         <span className="popular-label">Popular:</span>
 
         {categories.map((category, index) => (
@@ -203,11 +199,11 @@ function Home() {
             {category}
           </span>
         ))}
-      </section> */}
+      </section>
 
       {/* Statistics */}
 
-  {/* <section className="public-stat">
+  <section className="public-stat">
 
     <div className="stat-parent"><div className="inner-stat">
         <div className="stat-row1">
@@ -257,34 +253,12 @@ function Home() {
 
     </div></div>
 
-  </section> */}
+  </section>
 
 
-
-      {/* <section className="stats-grid">
-        {stats.map((stat) => (
-          <div className="stat-card" key={stat.label}>
-
-            <div className="stat-top">
-              <span className="stat-label">
-                {stat.label}
-              </span>
-
-              <div className={`stat-icon ${stat.className}`}>
-                {stat.icon}
-              </div>
-            </div>
-
-            <div className="stat-value">
-              {stat.value}
-            </div>
-
-          </div>
-        ))}
-      </section> */}
 
       {/* Featured Events */}
- {/* <section className="featured-section">
+ <section className="featured-section">
 
         <div className="section-heading">
           <h2>Featured Events</h2>
@@ -292,13 +266,15 @@ function Home() {
           <button className="view-all-btn" onClick={handleNavigate}>
             View all
             <span>→</span>
-          </button> */}
-          {/* <Link to="/event" onClick={() => window.scrollTo(0, 0)}>
+          </button> 
+           {/* <Link to="/event" onClick={() => window.scrollTo(0, 0)}>
   View All
 </Link> */}
-        {/* </div> */}
+         </div> 
+</section>
 
-         {/* <div className="events-grid-4">
+
+         <div className="events-grid-4">
 
   {featuredEvents.map((event,index) => (
 
@@ -308,10 +284,7 @@ function Home() {
       styles={{ body: { padding: 0 } }}
     >
 
-      <div
-        className="event-cover"
-        style={{ background: event.color }}
-      >
+      <div className="event-cover"  style={{ background: getCategoryColor(event.category) }} >
         <span>{event.icon}</span>
 
         <span className="price-chip">
@@ -321,8 +294,8 @@ function Home() {
 
       <div className="event-body">
 
-        <span className="event-category">
-          {event.category}
+        <span>
+    <CategoryTag category={event.category} />
         </span>
 
         <h3 className="event-title">
@@ -330,7 +303,7 @@ function Home() {
         </h3>
 
         <div className="event-meta">
-          <span><CalendarTwoTone /></span>
+          <span><CalendarOutlined /></span>
           <span>{event.date}</span>
         </div>
 
@@ -339,7 +312,7 @@ function Home() {
           <span>{event.location}</span>
         </div>
 
-        <button className="event-btn">
+        <button className="event-btn" onClick={()=>navigate('/event-details')}>
           View Details
         </button>
 
@@ -349,14 +322,8 @@ function Home() {
 
   ))}
 
-</div> */}
+</div>
 
-      {/* </section>        */}
-
-      {/* Footer */}
-      {/* // <footer className="home-footer">
-      //   EventHub — UI Mockup
-      // </footer> */}
 
     </div>
   );

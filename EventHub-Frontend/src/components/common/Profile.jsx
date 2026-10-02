@@ -43,38 +43,14 @@ function Profile() {
 
           <h2>My Profile</h2>
 
-          {!isEditing && (
-            <Button
-              type="primary"
-              icon={<EditOutlined />}
-              onClick={handleEdit}
-            >
-              Edit
-            </Button>
-          )}
-
         </div>
-
-        {/* Profile Details */}
-        {/* <div className="profile-details">
-
-          <div className="profile-avatar">
-            A
-          </div>
-
-          <div>
-            <h3>{initialValues.fullName}</h3>
-            <p>{initialValues.email}</p>
-          </div>
-
-        </div> */}
 
         {/* Form */}
         <Form
           form={form}
           layout="vertical"
           initialValues={initialValues}
-          onFinish={handleSave}
+            onFinish={handleSave}
           disabled={!isEditing}
         >
 
@@ -118,29 +94,26 @@ function Profile() {
 
           </Row>
 
-          {/* Buttons */}
-          {isEditing && (
+         
+
+        </Form>
+         {/* Buttons */}
+         
             <div className="profile-actions">
+          <Button
+          type="primary"
+          icon={isEditing ? <SaveOutlined /> : <EditOutlined />}
+          onClick={isEditing ? () => form.submit() : handleEdit}
+        >
+          {isEditing ? "Save" : "Edit"}
+        </Button>
 
-              <Button
-                type="primary"
-                htmlType="submit"
-                // icon={<SaveOutlined />}
-              >
-                Save
-              </Button>
-
-              <Button
-                // icon={<CloseOutlined />}
-                onClick={handleCancel}
-              >
+              <Button onClick={handleCancel}>
                 Cancel
               </Button>
 
             </div>
-          )}
-
-        </Form>
+       
 
       </Card>
 

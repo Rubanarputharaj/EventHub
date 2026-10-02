@@ -95,7 +95,7 @@ function Signup() {
               required
             />
           </div>
-<div className="password-group">
+             <div className="password-group">
           {/* Password */}
           <div className="form-group">
             <label>Password</label>
@@ -123,7 +123,7 @@ function Signup() {
               required
             />
           </div>
-</div>
+           </div>
           {/* Role */}
           <div className="form-group">
             <label>I want to</label>

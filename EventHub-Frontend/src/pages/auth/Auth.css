@@ -1,13 +1,9 @@
-
 .signup-page {
   width: 100vw;
   min-height: 120vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* background: #f5f5f5; */
   background-color: #1E2D3D;
   padding: 30px;
   box-sizing: border-box;
@@ -18,11 +14,9 @@
   width: 100%;
   max-width: 450px;
   padding: 35px;
-
   background: #fff;
   border: 1px solid #e5e5e5;
   border-radius: 14px;
-
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   height: 110vh;
 }
@@ -42,17 +36,13 @@
   display: inline-block;
   margin-right: 5px;
   padding: 4px 6px;
-
   color: white;
-     background: linear-gradient(135deg, #1677ff, #69b1ff);;
-
-
+  background: linear-gradient(135deg, #1677ff, #69b1ff);;
   border-radius: 5px;
 }
 
 .signup-header h1 {
   margin: 0 0 8px;
-
   font-size: 26px;
   font-weight: 600;
   color: #222;
@@ -60,7 +50,6 @@
 
 .signup-header p {
   margin: 0;
-
   font-size: 14px;
   color: #888;
 }
@@ -72,7 +61,6 @@
 .form-group > label {
   display: block;
   margin-bottom: 7px;
-
   font-size: 14px;
   font-weight: 500;
   color: #333;
@@ -83,15 +71,11 @@
 .form-group input[type="password"] {
   width: 100%;
   height: 35px;
-
   padding: 0 12px;
-
   border: 1px solid #d9d9d9;
   border-radius: 6px;
-
   outline: none;
   font-size: 14px;
-
   box-sizing: border-box;
 }
 
@@ -129,39 +113,6 @@
   border-color: var(--primary);
 }
 
-/* 
-.role-options {
-  display: flex;
-  gap: 10px;
-}
-
-.role-option {
-  flex: 1;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 12px;
-
-  border: 1px solid #d9d9d9;
-  border-radius: 7px;
-
-  cursor: pointer;
-
-  font-size: 13px;
-  color: #555;
-}
-
-.role-option.active {
-  border-color: #1677ff;
-  background: #f0f7ff;
-  color: #1677ff;
-}
-
-.role-option input {
-  accent-color: #1677ff;
-} */
 
 /* Terms */
 
@@ -169,12 +120,9 @@
   display: flex;
   align-items: flex-start;
   gap: 8px;
-
   margin-bottom: 20px;
-
   font-size: 12.5px;
   color: #777;
-
   cursor: pointer;
 }
 
@@ -192,17 +140,12 @@
 .signup-btn {
   width: 100%;
   height: 44px;
-
   border: none;
   border-radius: 7px;
-
-background-color: #1677ff;
-
+  background-color: #1677ff;
   color: white;
-
   font-size: 15px;
   font-weight: 600;
-
   cursor: pointer;
 }
 
@@ -214,21 +157,16 @@ background-color: #1677ff;
 
 .login-text {
   margin-top: 22px;
-
   text-align: center;
-
   font-size: 13px;
   color: #777;
 }
 
 .login-text button {
   margin-left: 5px;
-
   border: none;
   background: transparent;
-
   color: #1677ff;
-
   font-size: 13px;
   cursor: pointer;
 }
@@ -237,6 +175,7 @@ background-color: #1677ff;
     display: flex;
     gap: 10px;
 }
+
 label{
     text-align: left;
 }

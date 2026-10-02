@@ -1,36 +1,28 @@
 import React from 'react'
 import { useState } from "react";
-import { Steps, Button, Input, Select } from "antd";
-import "./Organizer.css"
+import { Steps, Button, Input, Select, message, Divider,Checkbox } from "antd";
+import "./Organizer.css";
+import {useNavigate} from 'react-router-dom'
 import TextArea from 'antd/es/input/TextArea';
 import { Upload, Tag } from "antd";
-import { InboxOutlined, FilePdfOutlined, FileImageOutlined, DeleteOutlined } from "@ant-design/icons";
+import { CloudUploadOutlined , FilePdfOutlined, FileImageOutlined, DeleteOutlined } from "@ant-design/icons";
 const { Dragger } = Upload;
 function Create_Event() {
  
   const [current, setCurrent] = useState(0);
-const [fileList, setFileList] = useState([]);
-const uploadProps = {
-  name: 'file',
-  multiple: true,
-  accept: '.pdf,.png,.jpg,.jpeg',
-  showUploadList: false,
-  beforeUpload: (file) => {
-    setFileList(prev => [...prev, { uid: file.uid, name: file.name, size: file.size }]);
-    return false;   // network call pogaathu, local state la mattum add aagum
-  },
+const navigate = useNavigate();
+
+const handleSaveDraft = () => {
+  message.success('Event saved as draft');
 };
 
-const removeFile = (uid) => setFileList(prev => prev.filter(f => f.uid !== uid));
+const handlePublish = () => {
+  message.success('Event published successfully');
+  navigate('/organizer/');   
 
-const getFileIcon = (name) =>
-  name.toLowerCase().endsWith('.pdf')
-    ? <FilePdfOutlined style={{ color: '#ff4d4f', fontSize: 20 }} />
-    : <FileImageOutlined style={{ color: '#fa8c16', fontSize: 20 }} />;
+};
 
-const formatSize = (bytes) =>
-  bytes < 1024 * 1024 ? `${(bytes / 1024).toFixed(0)} KB` : `${(bytes / 1024 / 1024).toFixed(1)} MB`;
-  const next = () => {
+const next = () => {
     setCurrent(current + 1);
   };
 
@@ -113,8 +105,9 @@ const formatSize = (bytes) =>
           <div>
             {/* <h2>Venue & Date</h2> */}
 
-<div className='row2-parent'>
-              <div><label className='form-label' ><span className='red-star'>*</span>City</label>
+       <div className='row2-parent'>
+              <div>
+                <label className='form-label' ><span className='red-star'>*</span>City</label>
                          <Input placeholder='enter th city'  className='input'/>
 
            </div>
@@ -125,7 +118,7 @@ const formatSize = (bytes) =>
             </div>
             <div className='row2-parent'>
               <div><label className='form-label' ><span className='red-star'>*</span>Event Date</label>
-                         <Input placeholder='enter th city'  className='input'/>
+                  <Input placeholder='enter th city'  className='input'/>
 
            </div>
             <div>
@@ -153,73 +146,71 @@ const formatSize = (bytes) =>
               <Input placeholder='Enter maximum capacity'  className='input'/>
             </div>
             </div>
-
+             <div>
+              <label 
+              className='form-label'>Capacity Preview</label>
+              <Divider className='capacity-divider'/>
+              <p className='capacity-desc'>0 / 500 registered — resets when event is published</p>
+              <div>
+                <span  className='capacity-cb-container'>    
+                    <Checkbox className='checkbox-capaticty'/> 
+                    <label className='price-desc'>Offer free tickets for this event (price = ₹0)</label>
+                 </span>             
+                 
+               </div>
+             </div>
           </div>
         )}
 
-        {/* {current === 3 && (
-          <div>
-             <h2>Documents</h2> 
-
-            <label className='form-label'><span className='red-star'>*</span>Event Document</label>
-            <Input type="file" />
-          </div>
-        )} */}
-
         {current === 3 && (
-  <div>
-    <label className='form-label'><span className='red-star'>*</span>Event Document</label>
 
-    <Dragger {...uploadProps}>
-      <p className="ant-upload-drag-icon"><InboxOutlined /></p>
-      <p className="ant-upload-text">Click or drag files to this area to upload</p>
-      <p className="ant-upload-hint">Supports PDF, PNG, JPG</p>
-    </Dragger>
+      <div>
+            <label className="form-label">
+              <span className="red-star">*</span>Event Collateral (PDF / Images)
+            </label>
 
-    <div className="uploaded-file-list">
-      {fileList.map(file => (
-        <div className="uploaded-file-row" key={file.uid}>
-          <div className="uploaded-file-left">
-            {getFileIcon(file.name)}
-            <div>
-              <div className="uploaded-file-name">{file.name}</div>
-              <div className="uploaded-file-meta">Uploaded · {formatSize(file.size)}</div>
-            </div>
-          </div>
-          <div className="uploaded-file-right">
-            <Tag color="green">Public</Tag>
-            <DeleteOutlined onClick={() => removeFile(file.uid)} style={{ cursor: 'pointer', color: 'var(--text-tertiary)' }} />
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-)}
+            <Dragger
+              name="eventDocument"
+              multiple={false}
+              beforeUpload={() => false}
+              showUploadList={true} className='dragger-main'
+            >
+             <div className='custom-file-upload'>
+               <span><CloudUploadOutlined className='upload-icon' /></span>
 
-        <div className="form-buttons">
+              <p className="upload-text">
+                Click or drag file to this area to upload
+              </p>
 
-          {current > 0 && (
-            <Button onClick={previous}>
-              Previous
+              <p className="upload-hint">
+                Upload event document in PDF or image format.
+              </p>
+             </div>
+            </Dragger>
+      </div>
+        )}
+
+  
+       <div className="form-buttons">
+            <Button onClick={current === 0 ? () => navigate('/organizer/') : previous}>
+              Back
             </Button>
-          )}
 
-          {current < 3 && (
-            <Button type="primary" onClick={next}>
-              Next
-            </Button>
-          )}
+    <div className="form-buttons-right">
+        <Button type="dashed" onClick={handleSaveDraft}>
+          Save as Draft
+        </Button>
 
-          {current === 3 && (
-            <Button type="primary">
-              Submit
-            </Button>
+          {current < 3 ? (
+            <Button type="primary" onClick={next}>Next</Button>
+          ) : (
+            <Button type="primary" onClick={handlePublish}>Publish</Button>
           )}
-
-        </div>
+     </div>
+   </div>
 
       </div>
-    </div>
+  </div>
   );
 }
 

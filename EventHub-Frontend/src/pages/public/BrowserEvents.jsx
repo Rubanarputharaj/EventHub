@@ -1,14 +1,34 @@
 import React from 'react'
 import { useState } from 'react';
-import {CalendarTwoTone,TeamOutlined ,
+import {CalendarTwoTone,TeamOutlined ,CalendarOutlined,
   UserOutlined,EnvironmentOutlined,RightOutlined, LeftOutlined  ,CoffeeOutlined 
 ,TikTokOutlined ,PictureOutlined } from "@ant-design/icons";
+ import { getCategoryColor } from '../../Constants/CategoryColor';
+ import CategoryTag from "../../Constants/CategoryTag";
 import './Public.css'
 import {Select} from 'antd'
 import { useNavigate } from 'react-router-dom';
 function BrowserEvents() {
 const [price, setPrice] = useState(0);
 const navigate=useNavigate()
+
+const handleEventClick = () => {
+  const path = window.location.pathname;
+
+ 
+  if (path.startsWith("/attendee")) {
+    navigate("/attendee/event-details");
+  } 
+  else if (path.startsWith("/organizer")) {
+    navigate("/organizer/event-details");
+  } 
+  else if (path.startsWith("/admin")) {
+    navigate("/admin/event-details");
+  } 
+  else {
+    navigate("/event-details");
+  }
+};
 
  const featuredEvents = [
    {
@@ -18,7 +38,6 @@ const navigate=useNavigate()
      date: "Oct 18, 2026",
      location: "Bengaluru",
      price: "₹1,499",
-     color: "linear-gradient(135deg, #1677ff, #69b1ff)",
    },
     {
      title: "Tech Summit 2026",
@@ -27,7 +46,6 @@ const navigate=useNavigate()
      date: "Oct 18, 2026",
      location: "Bengaluru",
      price: "₹1,499",
- color: "linear-gradient(135deg, #16a34a, #b7f7c5)",
   },
   {
      title: "Business Leaders Meet",
@@ -36,7 +54,6 @@ const navigate=useNavigate()
      date: "Nov 15, 2026",
      location: "Mumbai",
      price: "₹1,999",
- color: "linear-gradient(135deg, #e91e63, #ffb6d5 )", 
   },
    {
      title: "Indie Music Fest",
@@ -45,7 +62,6 @@ const navigate=useNavigate()
      date: "Nov 2, 2026",
      location: "Chennai",
      price: "₹999",
-     color: "linear-gradient(135deg, #722ed1, #b37feb)",
    },
    {
      title: "Business Leaders Meet",
@@ -54,7 +70,6 @@ const navigate=useNavigate()
      date: "Nov 15, 2026",
      location: "Mumbai",
      price: "₹1,999",
-     color: "linear-gradient(135deg, #13c2c2, #5cdbd3)",
    },
    {
      title: "Sports Carnival 2026",
@@ -63,7 +78,6 @@ const navigate=useNavigate()
      date: "Dec 5, 2026",
      location: "Hyderabad",
      price: "₹799",
-     color: "linear-gradient(135deg, #fa8c16, #ffc069)",
    },
    {
      title: "Tech Summit 2026",
@@ -72,7 +86,6 @@ const navigate=useNavigate()
      date: "Oct 18, 2026",
      location: "Bengaluru",
      price: "₹1,499",
- color: "linear-gradient(135deg, #16a34a, #b7f7c5)",
   },
    {
      title: "Indie Music Fest",
@@ -81,7 +94,6 @@ const navigate=useNavigate()
      date: "Nov 2, 2026",
      location: "Chennai",
      price: "₹999",
-     color: "linear-gradient(135deg, #722ed1, #b37feb)",
    },
    {
      title: "Business Leaders Meet",
@@ -90,7 +102,6 @@ const navigate=useNavigate()
      date: "Nov 15, 2026",
      location: "Mumbai",
      price: "₹1,999",
- color: "linear-gradient(135deg, #e91e63, #ffb6d5 )", 
   },
    {
      title: "Sports Carnival 2026",
@@ -99,7 +110,6 @@ const navigate=useNavigate()
      date: "Dec 5, 2026",
      location: "Hyderabad",
      price: "₹799",
-     color: "linear-gradient(135deg, #fa8c16, #ffc069)",
    },
  ];
  
@@ -139,7 +149,7 @@ const categories = [
   "Food & Drink",
 ];
   return (
-    <div className='main-container'>
+    <div className='main-container-1'>
       <div className='inner-container'>
         <section id='event-section-1'>
         <h1 className='title'>Browse Events</h1>
@@ -202,11 +212,11 @@ const categories = [
 
 <div className='events-main'>
   <div id='events-toolbar'>
-    <p>Showing 6 of 128 events</p>
+    <p className='card-count'>Showing 6 of 128 events</p>
     <div className='sort-group'>
       <p>Sort by</p>
     
- <Select placeholder={"Most Popular"} options={[
+ <Select className='event-select' placeholder={"Most Popular"} options={[
 {
   label:"Most Popular",
   value:"Most popular"
@@ -227,11 +237,11 @@ const categories = [
         <div className="events-grid-3">
 
           {featuredEvents.map((event) => (
-            <div className="event-card" key={event.title} onClick={()=>navigate('/event-details')}>
+            <div className="event-card" key={event.title} onClick={handleEventClick}>
 
               <div
                 className="event-cover"
-                style={{ background: event.color }}
+                style={{ background: getCategoryColor(event.category) }}
               >
                 <span>{event.icon}</span>
 
@@ -242,14 +252,14 @@ const categories = [
 
               <div className="event-body">
 
-                <span className="event-category">
-                  {event.category}
+                <span>
+                <CategoryTag category={event.category} />
                 </span>
 
                 <h3 className="event-title">{event.title}</h3>
 
                 <div className="event-meta">
-                  <span><CalendarTwoTone /></span>
+                  <span><CalendarOutlined /></span>
                   <span>{event.date}</span>
                 </div>
 
